@@ -1,0 +1,14 @@
+{% extends "tea_shop/main.html" %}
+
+{% block content %}
+<h1>Категории чая</h1>
+<ul>
+    {% for category in categories %}
+        <li><a href="{% url 'tea_category_detail' category.pk %}">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+    
+
+
+

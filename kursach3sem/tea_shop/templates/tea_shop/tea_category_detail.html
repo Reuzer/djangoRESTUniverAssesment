@@ -1,0 +1,7 @@
+{% extends "tea_shop/main.html" %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.description }}</p>
+    <a href="{% url 'tea_category_list' %}">Вернуться к списку</a>
+{% endblock %}

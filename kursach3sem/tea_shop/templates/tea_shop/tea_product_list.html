@@ -1,0 +1,22 @@
+{% extends "tea_shop/main.html" %}
+
+{%block content%}
+
+<h1>Продукты</h1>
+<a href="{% url 'tea_product_add' %}" style="text-decoration:none;">Добавить продукт</a>
+<ul>
+    {% for product in products %}
+    <div class="card" style="width: 18rem; margin-top: 20px;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{% url 'tea_product_detail' product.pk %}">{{ product.name }}</a></h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="card-text">{{product.price}} руб</p>
+        </div>
+      </div>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
+
+<!-- <a href="{% url 'tea_product_detail' product.pk %}">{{ product.name }}</a> -->

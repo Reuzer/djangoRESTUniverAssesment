@@ -1,0 +1,14 @@
+{%extends "tea_shop/main.html"%}
+
+{% block content %}
+
+<h1>{{ product.name }}</h1>
+<p>Категория: {{ product.category.name }}</p>
+<p>Описание: {{ product.description }}</p>
+<p>Цена: {{ product.price }} руб.</p>
+<p>В наличии: {{ product.stock }}</p>
+<a href="{% url 'tea_product_edit' product.pk %}">Редактировать</a> |
+<a href="{% url 'tea_product_delete' product.pk %}">Удалить</a> |
+<a href="{% url 'tea_product_list' %}">Вернуться к списку</a>
+
+{% endblock %}
